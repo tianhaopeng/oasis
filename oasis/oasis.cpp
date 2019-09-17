@@ -1,4 +1,7 @@
 // oasis.cpp : Defines the entry point for the application.
+// Name: Haopeng Tian
+// Email: tianhp1@gmail.com
+// Description: This is the replacement for Opss name as Oasis
 //
 
 #include "framework.h"
