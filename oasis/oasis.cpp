@@ -6,7 +6,8 @@
 
 #include "framework.h"
 #include "oasis.h"
-
+#include <opencv2/opencv.hpp>
+#include <iostream>
 #define MAX_LOADSTRING 100
 
 // Global Variables:
@@ -29,6 +30,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     // TODO: Place code here.
+
 
     // Initialize global strings
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
