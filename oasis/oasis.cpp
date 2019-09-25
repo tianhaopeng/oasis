@@ -29,7 +29,33 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
-    // TODO: Place code here.
+    // TODO: Activate camera.
+	// FIXME: Original window cannot be displayed.
+	cv::namedWindow("raw", cv::WINDOW_AUTOSIZE);
+
+	cv::VideoCapture cap;
+	cap.open(0);
+
+	if (!cap.isOpened())
+	{
+		std::cerr << "Couldn't open capture." << std::endl;
+		return -1;
+	}
+
+	cv::UMat bgr_frame;
+
+	for (;;)
+	{
+		cap >> bgr_frame;
+		if (bgr_frame.empty()) break;
+
+		cv::imshow("raw", bgr_frame);
+
+		char c = cv::waitKey(10);
+		if (c == 27) break;
+	}
+
+	cap.release();
 
 
     // Initialize global strings
